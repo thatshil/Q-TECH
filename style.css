@@ -1,0 +1,349 @@
+/* =====================
+   GLOBAL AYARLAR
+   ===================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Padding ve border'ın genişliği bozmasını engellemek için */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f7; /* Açık zemin rengi */
+  color: #233b61; /* Ana metin rengi */
+}
+
+/* =====================
+   NAVBAR
+   ===================== */
+
+.navbar {
+  display: flex; /* Logo ve linkleri yan yana dizmek için */
+  justify-content: space-between; /* Logo sola, linkler sağa */
+  align-items: center; /* Dikeyde ortalama */
+  padding: 20px 40px;
+  background-color: #233b61; /* Kurumsal lacivert */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.nav-links {
+  display: flex; /* Menü linklerini yan yana dizmek için */
+  gap: 20px; /* Linkler arası boşluk */
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* =====================
+   HERO SECTION
+   ===================== */
+
+.hero {
+  display: flex; /* Yazı ve görseli yan yana dizmek için */
+  align-items: center; /* Dikeyde ortalamak için */
+  justify-content: space-between; /* Alanı ikiye bölmek için */
+  padding: 60px 40px;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 1; /* Yazı alanının esnek büyümesi için */
+}
+
+.hero-text h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.hero-image {
+  flex: 1; /* Görsel alanın yazı ile eşit yer kaplaması için */
+}
+
+/* Geçici görsel kutusu */
+.image-placeholder {
+  width: 100%;
+  height: 250px;
+  background-color: #233b61;
+  color: #ffffff;
+  display: flex; /* Metni ortalamak için */
+  justify-content: center; /* Yatay ortalama */
+  align-items: center; /* Dikey ortalama */
+}
+ /* =====================
+   SERVICES SECTION
+   ===================== */
+
+.services {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+/* Hizmet kartlarını grid yapısında dizmek için */
+.service-grid {
+  display: grid; /* Kartları sütun tabanlı yerleştirmek için */
+  grid-template-columns: repeat(3, 1fr); /* Masaüstünde 3 sütun */
+  gap: 20px; /* Kartlar arası boşluk */
+}
+
+.service-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+/* =====================
+   RESPONSIVE KIRILIMLAR
+   ===================== */
+
+/* Tablet görünüm */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column; /* Mobilde görsel ve yazıyı alt alta almak için */
+    text-align: center;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr); /* Tablet modunda 2 sütun */
+  }
+}
+
+/* Mobil görünüm */
+@media (max-width: 480px) {
+  .service-grid {
+    grid-template-columns: 1fr; /* Mobilde tek sütun */
+  }
+
+  .navbar {
+    flex-direction: column; /* Menü elemanlarını alt alta almak için */
+    gap: 10px;
+  }
+}
+/* =====================
+   TASK 2.2 – GHOST PROTOCOL
+   ===================== */
+
+/* Listeyi kart düzenine çevirmek için */
+ul {
+  list-style: none; /* Varsayılan liste noktalarını kaldırmak için */
+  display: flex; /* Fiyat kartlarını yan yana dizmek için */
+  gap: 20px; /* Kartlar arası boşluk */
+  padding: 40px;
+  justify-content: center; /* Kartları ortalamak için */
+  flex-wrap: wrap; /* Küçük ekranlarda kartların alt satıra geçmesi için */
+}
+
+/* Her bir fiyat kartı */
+ul li {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 30px;
+  width: 280px; /* Kartların eşit genişlikte olması için */
+  text-align: center;
+  border: 1px solid #e0e0e0;
+}
+
+/* Paket başlığı */
+ul li h2,
+ul li h3 {
+  margin-bottom: 15px;
+  color: #233b61;
+}
+
+/* Fiyat metni */
+ul li p {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+/* Buton görünümü */
+ul li a,
+ul li button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f39c12;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+/* =====================
+   GHOST PROTOCOL – TASK 2.2
+   ===================== */
+
+/* Sayfa genel hizalama */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Başlık alanı */
+.page-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Fiyat kartlarını yan yana dizmek için */
+.pricing-wrapper {
+  display: flex; /* Kartları yatayda yan yana dizmek için */
+  justify-content: center; /* Kartları ortalamak için */
+  gap: 30px; /* Kartlar arası boşluk */
+  flex-wrap: wrap; /* Küçük ekranlarda kartların alt satıra geçmesi için */
+}
+
+/* Tekil kart yapısı */
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 300px;
+  padding: 30px 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+/* Popüler paket vurgusu */
+.card.popular {
+  border: 2px solid #f39c12; /* Öne çıkan paketi vurgulamak için */
+}
+
+/* Popüler etiketi */
+.badge {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background-color: #f39c12;
+  color: #ffffff;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 20px;
+}
+
+/* Kart üst alanı */
+.card-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Fiyat alanı */
+.price-box {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Özellik listesi */
+.card-body ul {
+  list-style: none; /* Liste işaretlerini kaldırmak için */
+  padding: 0;
+  margin: 20px 0;
+}
+
+.card-body ul li {
+  margin-bottom: 10px;
+}
+
+/* Devre dışı özellikler */
+.card-body ul li.disabled {
+  color: #999999;
+  text-decoration: line-through;
+}
+
+/* Kart alt alanı */
+.card-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Buton stili */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #233b61;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Vurgulu buton */
+.btn-primary {
+  background-color: #f39c12;
+}
+
+/* Geri dönüş linki */
+.back-link {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* =====================
+   FOOTER
+   ===================== */
+
+.site-footer {
+  background-color: #233b61; /* Kurumsal lacivert zemin */
+  color: #ffffff;
+  padding: 40px 20px 20px;
+}
+
+.footer-content {
+  display: flex; /* Footer içeriğini yatayda bölmek için */
+  justify-content: space-between; /* Marka sola, linkler sağa */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* Mobilde alt satıra düşmesi için */
+  gap: 20px;
+}
+
+.footer-brand h3 {
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  display: flex; /* Footer linklerini yan yana dizmek için */
+  gap: 15px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Alt telif alanı */
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* =====================
+   FOOTER RESPONSIVE
+   ===================== */
+
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column; /* Mobilde footer içeriğini alt alta almak için */
+    text-align: center;
+  }
+}
